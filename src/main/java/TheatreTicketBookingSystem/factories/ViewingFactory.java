@@ -11,10 +11,7 @@ public class ViewingFactory {
                 .show_id((Long)values.get("show_id"))
                 .time((String)values.get("time"))
                 .show_date((Date) values.get("show_date"))
-                .action((Action)values.get("action"))
-                .horror((Horror)values.get("horror"))
-                .scifi((SciFi)values.get("scifi"))
-                .documentary((Documentary)values.get("documentary"))
+                .movie((Movie) values.get("movie"))
                 .build();
         return factoryShow;
     }

@@ -7,19 +7,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Created by Emma on 10/12/2018.
+ * Created by Hasan on 10/15/2018.
  */
-@Entity
-public class Economy implements Seating_Class {
 
+@Entity
+public class VVIP implements Seating_Class {
+
+    protected String class_name;
+    protected int price;
     @Id
     @GeneratedValue
     protected Long seat_id;
-    protected String class_name;
-    protected int price;
-    protected String imagePath;
 
-    public Economy() { }
+    public VVIP() {
+    }
 
     public String getClass_name() {
         return class_name;
@@ -33,20 +34,16 @@ public class Economy implements Seating_Class {
         return seat_id;
     }
 
-    public String getImagePath() { return imagePath; }
-
-    public Economy(Builder builder){
+    public VVIP(Builder builder){
         this.class_name = builder.class_name;
         this.price = builder.price;
         this.seat_id = builder.seat_id;
-        this.imagePath = builder.imagePath;
     }
 
     public static class Builder{
         private String class_name;
         private int price;
         private Long seat_id;
-        private String imagePath;
 
 
         public Builder class_name(String class_name) {
@@ -64,13 +61,9 @@ public class Economy implements Seating_Class {
             return this;
         }
 
-        public Builder imagePath(String imagePath) {
-            this.imagePath = imagePath;
-            return this;
-        }
-
-        public Economy build(){
-            return new Economy(this);
+        public VVIP build(){
+            return new VVIP(this);
         }
     }
 }
+
