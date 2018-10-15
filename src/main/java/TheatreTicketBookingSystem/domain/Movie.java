@@ -10,24 +10,19 @@ import javax.persistence.*;
 public class Movie {
     @Id
     @GeneratedValue
-    protected Long id;          // make stuff protected from the law
+    protected Long movie_id;
     protected int duration;
     protected String title;
     protected String imagePath;
-//    @OneToMany()
-//    protected List<Viewing> viewing;
-//    @OneToOne
-//    private Reservation reservation;
-
-//    public Reservation getReservation() {
-//        return reservation;
-//    }
+    @OneToMany(mappedBy = "id")
+    protected List<Viewing> viewing;
+    protected String category;
 
     public String getImagePath() { return imagePath; }
 
-    public Long getId()
+    public Long getMovie_id()
     {
-        return id;
+        return movie_id;
     }
 
     public int getDuration() {
@@ -38,35 +33,38 @@ public class Movie {
         return title;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public List<Viewing> getViewing() {
+        return viewing;
+    }
+
     public Movie() { }
 
     public Movie(Builder builder){
-        this.id = builder.id;
+        this.movie_id = builder.movie_id;
         this.duration = builder.duration;
         this.title = builder.title;
         this.imagePath = builder.imagePath;
-//        this.viewing = builder.viewing;
-        //      this.reservation = builder.reservation;
+        this.viewing = builder.viewing;
+        this.category = builder.category;
     }
 
     public static class Builder{
 
-        private Long id;
+        private Long movie_id;
         private String title;
         private int duration;
         private String imagePath;
-//        private Reservation reservation;
-//        private List<Viewing> viewing;
+        private List<Viewing> viewing;
+        private String category;
 
-//        public Builder viewing(List<Viewing> viewing) {
-//            this.viewing = viewing;
-//            return this;
-//        }
-//
-//        public Builder reservation(Reservation reservation) {
-//            this.reservation = reservation;
-//            return this;
-//        }
+        public Builder viewing(List<Viewing> viewing) {
+            this.viewing = viewing;
+            return this;
+        }
 
         public Builder imagePath(String imagePath) {
             this.imagePath = imagePath;
@@ -74,7 +72,7 @@ public class Movie {
         }
 
         public Builder movie_id(Long movie_id) {
-            this.id = movie_id;
+            this.movie_id = movie_id;
             return this;
         }
 
@@ -85,6 +83,11 @@ public class Movie {
 
         public Builder duration(int duration) {
             this.duration = duration;
+            return this;
+        }
+
+        public Builder category(String category) {
+            this.category = category;
             return this;
         }
 

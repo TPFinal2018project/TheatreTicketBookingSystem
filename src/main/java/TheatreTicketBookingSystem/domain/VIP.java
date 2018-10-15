@@ -1,6 +1,6 @@
 package TheatreTicketBookingSystem.domain;
 
-import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
+import TheatreTicketBookingSystem.domain.interfaces.Seating_Class;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
