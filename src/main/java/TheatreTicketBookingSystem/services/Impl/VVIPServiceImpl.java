@@ -4,6 +4,7 @@ import TheatreTicketBookingSystem.domain.VVIP;
 import TheatreTicketBookingSystem.repositories.VVIPRepository;
 import TheatreTicketBookingSystem.services.VVIPService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +12,8 @@ import java.util.Set;
 /**
  * Created by Hasan on 10/15/2018.
  */
+
+@Service
 public class VVIPServiceImpl implements VVIPService {
 
     @Autowired

@@ -14,7 +14,7 @@ import java.util.Set;
  * Created by Emma on 10/12/2018.
  */
 @Controller
-@CrossOrigin(origins = "http://localhost")
+//@CrossOrigin(origins = "http://localhost:63342")
 @RequestMapping(path="/customer")
 public class CustomerController {
 
@@ -28,6 +28,7 @@ public class CustomerController {
         return customerService.readAll();
     }
 
+//    @CrossOrigin(origins = "http://localhost:63342")
     @RequestMapping( method = RequestMethod.POST, value="/add")
     public String addCustomer(@RequestBody Customer customer){
 

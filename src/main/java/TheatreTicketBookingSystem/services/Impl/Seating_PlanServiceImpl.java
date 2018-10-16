@@ -4,6 +4,7 @@ import TheatreTicketBookingSystem.domain.Seating_Plan;
 import TheatreTicketBookingSystem.repositories.Seating_PlanRepository;
 import TheatreTicketBookingSystem.services.Seating_PlanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +12,8 @@ import java.util.Set;
 /**
  * Created by Hasan on 10/15/2018.
  */
+
+@Service
 public class Seating_PlanServiceImpl implements Seating_PlanService {
 
     @Autowired
